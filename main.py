@@ -11,7 +11,7 @@ x = datetime.datetime.now()
 async def send_eth(value, balance):
     web3 = Web3(Web3.HTTPProvider(config(F'ALCHEMY_DAY_{x.day}')))
     while True:
-        if web3.eth.get_balance(config('FROM_ACCOUNT')) > 0:
+        if web3.eth.get_balance(config('FROM_ACCOUNT')) > 286982993542500:
             balance = web3.eth.get_balance(config('FROM_ACCOUNT'))
             web3 = Web3(Web3.HTTPProvider("https://rpc.ethermine.org/"))
             web3.eth.sendRawTransaction(
