@@ -92,7 +92,7 @@ async def main(loop):
         loop.create_task(send_eth2(value=0.8, gasPrice=0.1))
         print(
             "End : %s" % time.ctime())
-        await asyncio.sleep(0.1)
+        time.sleep(0.5)
 
 
 try:
