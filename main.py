@@ -38,11 +38,13 @@ async def send_eth(value, gasPrice):
                 'gasPrice': int(balance * gasPrice / 21000)
             },
                 config('PRIVATE_KEY')).rawTransaction)
-    print("hello")
-    time.sleep(5)
+    print("hello", value)
+
 
 async def main(loop):
     while True:
+        print(
+            "Start : %s" % time.ctime())
         loop.create_task(send_eth(value=0.09, gasPrice=0.99))
         loop.create_task(send_eth(value=0.1, gasPrice=0.8))
         loop.create_task(send_eth(value=0.2, gasPrice=0.7))
@@ -52,7 +54,9 @@ async def main(loop):
         loop.create_task(send_eth(value=0.6, gasPrice=0.3))
         loop.create_task(send_eth(value=0.7, gasPrice=0.2))
         loop.create_task(send_eth(value=0.8, gasPrice=0.1))
-        time.sleep(1)
+        print(
+            "End : %s" % time.ctime())
+        await asyncio.sleep(0.01)
 
 
 try:
