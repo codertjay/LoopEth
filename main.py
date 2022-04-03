@@ -1,8 +1,8 @@
 import asyncio
+import datetime
+
 from decouple import config
 from web3 import Web3
-import datetime
-from web3.eth import AsyncEth
 
 loop = asyncio.get_event_loop()
 x = datetime.datetime.now()
